@@ -7,15 +7,24 @@ public class Bolillero
     public IAzar Random { get; set; }
     public Bolillero(int bolillas, IAzar random)
     {
-        this.Adentro = new List<int>(bolillas);
+        Adentro = new List<int>();
+        CrearBolillas(bolillas);
         this.Jugada = new List<int>();
         this.Afuera = new List<int>();
         Random = random;
     }
-    public int SacarBolillas()
+
+    private void CrearBolillas(int bolillas)
+    {
+        for (int i = 0; i < bolillas; i++)
+            Adentro.Add(i);
+    }
+
+    public int SacarBolilla()
     {
         var indice = Random.SacarIndice(this.Adentro);
         var elemento = Adentro[indice];
+
 
         this.Afuera.Add(elemento);
         this.Adentro.RemoveAt(indice);
@@ -25,10 +34,10 @@ public class Bolillero
     {
         var ax = 0;
 
-        for (ax = 0; ax <= Jugada.Count(); ax++)
+        for (ax = 0; ax < Jugada.Count; ax++)
         {
-            var indice = SacarBolillas();
-            if (indice != Jugada[ax])
+            var bolilla = SacarBolilla();
+            if (bolilla != Jugada[ax])
             {
                 return false;
             }
