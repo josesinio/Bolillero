@@ -11,17 +11,17 @@
 
 ## Computación 2023
 
-**Asignatura**: <!-- REEMPLAZA este comentario por el nombre de la asignatura -->
+**Asignatura**: Programacion sobre redes.
 
-**Nombre TP**: <!-- REEMPLAZA este comentario por el nombre del TP -->
+**Nombre TP**: Bolillero.
 
-**Apellido y nombre Alumno**: <!-- REEMPLAZA este comentario por tu apellido y nombre -->
+**Apellido y nombre Alumno**: Cruz, Jose.
 
-**Curso**: <!-- REEMPLAZA este comentario por tu curso -->
+**Curso**: 6to 7ma
 
 # Título del Proyecto
 
-_Acá va un párrafo que describa lo que es el proyecto._
+El proyecto es simulador de un bolillero.
 
 ## Comenzando 🚀
 
@@ -53,8 +53,7 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Max Power** - *Desarrollo* - [Maxpower](https://github.com/maxpower)
-* **Cosme Fulanito** - *Documentación* - [Cosmefulanito](#Cosmefulanito)
+* **Jose cruz** - *Desarrollo* - [josesinio](https://github.com/josesinio)
 
 ## Licencia 📄
 
