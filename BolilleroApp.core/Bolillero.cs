@@ -1,5 +1,5 @@
 ﻿namespace BolilleroApp.core;
-public class Bolillero
+public class Bolillero : ICloneable
 {
     public List<int> Adentro { get; set; }
     public List<int> Jugada { get; set; }
@@ -13,6 +13,18 @@ public class Bolillero
         this.Afuera = new List<int>();
         Random = random;
     }
+
+    private Bolillero(Bolillero original)
+    {
+        Adentro = new List<int>(original.Adentro);
+        Afuera = new List<int>(original.Afuera);
+        Jugada = new List<int>(original.Jugada);
+        Random = original.Random;
+    }
+
+    public Bolillero Clonar()
+    => new Bolillero(this);
+
 
     private void CrearBolillas(int bolillas)
     {
@@ -67,4 +79,8 @@ public class Bolillero
         Afuera.Clear();
     }
 
+    public object Clone()
+    {
+        throw new NotImplementedException();
+    }
 }
