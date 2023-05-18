@@ -56,4 +56,13 @@ public class BolilleroTest
 
         Assert.Equal(1, jugada);
     }
+
+    [Fact]
+    public void ClonarBolillero()
+    {
+        var BolilleroCopia = Bolillero1.Clonar();
+
+        Assert.Equal(Bolillero1.Adentro, BolilleroCopia.Adentro);
+        Assert.Equal(Bolillero1.Afuera, BolilleroCopia.Afuera);
+    }
 }

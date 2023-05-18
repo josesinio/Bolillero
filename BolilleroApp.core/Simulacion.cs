@@ -8,21 +8,21 @@ public class Simulacion
     long SimularConHilos(Bolillero copia, int cantSimulaciones, List<int> Jugada, int hilos)
     {
         Task<long>[] Simulaciones = new Task<long>[hilos];
-        
-        var division = cantSimulaciones/hilos;
+
+        var division = cantSimulaciones / hilos;
 
 
-        for(int i = 0 ;i <= cantSimulaciones-1; i++)
+        for (int i = 0; i <= cantSimulaciones - 1; i++)
         {
             var BolilleroCopia = copia.Clonar();
-            
-            Simulaciones[i] = Task<long>.Run(()=> (long)BolilleroCopia.JugarNVeces(Jugada, 10000));
+
+            Simulaciones[i] = Task<long>.Run(() => (long)BolilleroCopia.JugarNVeces(Jugada, division));
 
         }
         Task<long>.WaitAll(Simulaciones);
 
 
-        return 0;
+        return Simulaciones.Sum(s => s.Result);
 
     }
 }

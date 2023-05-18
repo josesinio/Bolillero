@@ -18,7 +18,6 @@ public class Bolillero
     {
         Adentro = new List<int>(original.Adentro);
         Afuera = new List<int>(original.Afuera);
-        Jugada = new List<int>(original.Jugada);
         Random = original.Random;
     }
 
