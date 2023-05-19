@@ -2,17 +2,17 @@ namespace BolilleroApp.core;
 
 public class Simulacion
 {
-    long SimularSinHilos(Bolillero copia, int cantSimulaciones, List<int> jugada)
+    public long SimularSinHilos(Bolillero copia, int cantSimulaciones, List<int> jugada)
     => copia.JugarNVeces(jugada, cantSimulaciones);
 
-    long SimularConHilos(Bolillero copia, int cantSimulaciones, List<int> Jugada, int hilos)
+    public long SimularConHilos(Bolillero copia, int cantSimulaciones, List<int> Jugada, int hilos)
     {
         Task<long>[] Simulaciones = new Task<long>[hilos];
 
         var division = cantSimulaciones / hilos;
 
 
-        for (int i = 0; i <= cantSimulaciones - 1; i++)
+        for (int i = 0; i < cantSimulaciones - 1; i++)
         {
             var BolilleroCopia = copia.Clonar();
 

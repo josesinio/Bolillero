@@ -61,7 +61,7 @@ public class Bolillero
     public int JugarNVeces(List<int> Jugada, int cantidad)
     {
         var Victoria = 0;
-        for (int i = 0; i <= cantidad; i++)
+        for (int i = 0; i < cantidad; i++)
         {
             var intento = Jugar(Jugada);
 
