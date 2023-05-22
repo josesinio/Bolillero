@@ -9,13 +9,13 @@ public class Simulacion
     {
         Task<long>[] Simulaciones = new Task<long>[hilos];
 
-        var tarea = cantSimulaciones / hilos;
+        var tareas = cantSimulaciones / hilos;
 
 
         for (int i = 0; i < hilos; i++)
         {
             var BolilleroCopia = bolillero.Clonar();
-            Simulaciones[i] = Task<long>.Run(() => (long)BolilleroCopia.JugarNVeces(jugada, tarea));
+            Simulaciones[i] = Task<long>.Run(() => (long)BolilleroCopia.JugarNVeces(jugada, tareas));
 
         }
         Task<long>.WaitAll(Simulaciones);
