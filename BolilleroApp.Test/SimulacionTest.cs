@@ -27,7 +27,7 @@ public class SimulacionTest
         var cantidadHilos = 6;
         var simulaciones = 50_000_000;
         var resultado = SimulacionBolillero.SimularConHilos
-            (Bolillero: BolilleroSimulacion, cantSimulaciones: simulaciones, jugada: new List<int> { 0, 1 }, hilos: cantidadHilos);
+            (bolillero: BolilleroSimulacion, cantSimulaciones: simulaciones, jugada: new List<int> { 0, 1 }, hilos: cantidadHilos);
 
         Assert.Equal(cantidadHilos, resultado);
     }
