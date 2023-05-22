@@ -44,7 +44,7 @@ public class BolilleroTest
     [Fact]
     public void JugarPierde()
     {
-        var intentoPierde = Bolillero1.Jugar(Jugada: new List<int> { 4, 2, 1 });
+        var intentoPierde = Bolillero1.Jugar(jugada: new List<int> { 4, 2, 1 });
 
         Assert.False(intentoPierde);
     }
@@ -52,7 +52,7 @@ public class BolilleroTest
     [Fact]
     public void JugarNVecesGana()
     {
-        var jugada = Bolillero1.JugarNVeces(Jugada: new List<int> { 0, 1 }, 1);
+        var jugada = Bolillero1.JugarNVeces(jugada: new List<int> { 0, 1 }, 1);
 
         Assert.Equal(1, jugada);
     }

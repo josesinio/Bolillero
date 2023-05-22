@@ -15,8 +15,8 @@ public class SimulacionTest
     [Fact]
     public void SimularSinHilostest()
     {
-        var copiaBolillero= BolilleroSimulacion.Clonar();
-        var simulacion = SimulacionBolillero.SimularSinHilos(copiaBolillero, 1, jugada: new List<int> {0,1});
+        var copiaBolillero = BolilleroSimulacion.Clonar();
+        var simulacion = SimulacionBolillero.SimularSinHilos(copiaBolillero, 1, jugada: new List<int> { 0, 1 });
 
         Assert.Equal(1, simulacion);
     }
@@ -24,8 +24,11 @@ public class SimulacionTest
     [Fact]
     public void SimularConHilosTest()
     {
-        var simulacionHilos = SimulacionBolillero.SimularConHilos(BolilleroSimulacion,8, Jugada: new List<int> {0,1},4);
+        var cantidadHilos = 6;
+        var simulaciones = 50_000_000;
+        var resultado = SimulacionBolillero.SimularConHilos
+            (copia: BolilleroSimulacion, cantSimulaciones: simulaciones, jugada: new List<int> { 0, 1 }, hilos: cantidadHilos);
 
-        Assert.Equal(8, simulacionHilos);
+        Assert.Equal(cantidadHilos, resultado);
     }
 }
