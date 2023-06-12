@@ -42,4 +42,17 @@ public class SimulacionTest
 
         Assert.Equal(cantidadHilos, resultado);
     }
+
+    [Fact]
+
+    public async void SimularParallelAsync()
+
+    {
+        var cantidadHilos = 6;
+        var simulacion = 50_000_000;
+        var resultado = await SimulacionBolillero.SimularParallelAsync
+            (bolillero: BolilleroSimulacion, cantSimulaciones: simulacion, jugada: new List<int> { 0, 1 }, hilos: cantidadHilos);
+
+        Assert.Equal(cantidadHilos, resultado);
+    }
 }
